@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20231405_create_table_TBLKhoa
+      author: author_liquibase
+      changes:
+        - createTable:
+            tableName: TBLKhoa
+            columns:
+              - column:
+                  name: Makhoa
+                  type: varchar(10)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: Tenkhoa
+                  type: varchar(30)
+              - column:
+                  name: Dienthoai
+                  type: varchar(10)

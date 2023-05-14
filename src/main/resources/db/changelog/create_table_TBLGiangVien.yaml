@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20231405_create_table_TBLGiangVien
+      author: author_liquibase
+      changes:
+        - createTable:
+            tableName: TBLGiangVien
+            columns:
+              - column:
+                  name: Magv
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: Hotengv
+                  type: varchar(30)
+              - column:
+                  name: Luong
+                  type: decimal(5,2)
+              - column:
+                  name: Makhoa
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_tblgvkhoa
+                    references: TBLKhoa(Makhoa)

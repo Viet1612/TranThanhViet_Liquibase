@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20231405_create_table_TBLHuongDan
+      author: author_liquibase
+      changes:
+        - createTable:
+            tableName: TBLHuongDan
+            columns:
+              - column:
+                  name: Masv
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: Madt
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_tblmadt
+                    references: TBLDeTai(Madt)                  
+              - column:
+                  name: Magv
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_tblmagv
+                    references: TBLGiangVien(Magv)
+              - column:
+                  name: KetQua
+                  type: decimal(5,2)

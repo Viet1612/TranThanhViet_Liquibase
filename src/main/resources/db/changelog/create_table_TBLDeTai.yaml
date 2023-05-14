@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20231405_create_table_TBLDeTai
+      author: author_liquibase
+      changes:
+        - createTable:
+            tableName: TBLDeTai
+            columns:
+              - column:
+                  name: Madt
+                  type: varchar(10)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: Tendt
+                  type: varchar(30)
+              - column:
+                  name: Kinhphi
+                  type: BIGINT
+              - column:
+                  name: Noithuctap
+                  type: varchar(30)                  
